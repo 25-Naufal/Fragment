@@ -12,7 +12,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
  public class fragment_second extends Fragment {
     private PageViewModel pageViewModel;
-    private TextView txtName;
+    private TextView txtName,txtPhone,txtGender;
     public fragment_second () {
 // Required empty public constructor
     }
@@ -40,9 +40,19 @@ import androidx.lifecycle.ViewModelProviders;
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         txtName = view.findViewById(R.id.textViewName);
+        txtPhone = view.findViewById(R.id.textViewPhone);
+        txtGender = view.findViewById(R.id.textViewGender);
         pageViewModel.getName().observe(requireActivity(), new Observer<String>() {
                     @Override
                     public void onChanged(@Nullable String s) { txtName.setText(s); }
+                });
+        pageViewModel.getPhone().observe(requireActivity(), new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable String s) { txtPhone.setText(s); }
+                });
+        pageViewModel.getGender().observe(requireActivity(), new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable String s) { txtGender.setText(s); }
                 });
     }
 }

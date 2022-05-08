@@ -39,6 +39,9 @@ public class fragment_first extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         TextInputEditText nameEditText = view.findViewById(R.id.textInputTextName);
+        TextInputEditText phoneEditText = view.findViewById(R.id.textInputTextPhone);
+        TextInputEditText genderEditText = view.findViewById(R.id.textInputTextGender);
+
 
 // Add Text Watcher on name input text
         nameEditText.addTextChangedListener(new TextWatcher() {
@@ -48,6 +51,30 @@ public class fragment_first extends Fragment {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 pageViewModel.setName(charSequence.toString());
+            }
+            @Override
+            public void afterTextChanged(Editable editable) {
+            }
+        });
+        phoneEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                pageViewModel.setPhone(charSequence.toString());
+            }
+            @Override
+            public void afterTextChanged(Editable editable) {
+            }
+        });
+        genderEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                pageViewModel.setGender(charSequence.toString());
             }
             @Override
             public void afterTextChanged(Editable editable) {

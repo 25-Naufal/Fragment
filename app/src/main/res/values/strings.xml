@@ -4,4 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tab_text_1">Input</string>
     <string name="tab_text_2">Output</string>
+    <string name="user_display_name">User Display Name</string>
+    <string name="nomor_hp">nomor hp</string>
+    <string name="gender">gender</string>
 </resources>
